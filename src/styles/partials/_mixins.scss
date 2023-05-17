@@ -1,0 +1,41 @@
+@use "./variables" as *;
+
+// BREAKPOINTS
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+//PADDING -- MOBILE
+@mixin padding-mobile-headline {
+  padding-top: 24px; //padding before headlines
+  padding-bottom: 16px; //padding after headlines
+}
+
+@mixin padding-mobile-component {
+  padding: 16px; //padding between components
+}
+
+//PADDING -- DESKTOP/TABLET
+@mixin padding-desktop-tablet-headline {
+  padding-top: 36px; //padding before headlines
+  padding-bottom: 24px; //padding after headlines
+}
+
+@mixin padding-desktop-tablet-component {
+  padding: 0 24px; //padding between components
+}
+
+//MARGINS - DESKTOP Viewport beyond 1020px width
+@mixin desktop-margin {
+  width: $desktop-margin; //1020px
+  margin-left: auto;
+  margin-right: auto;
+}

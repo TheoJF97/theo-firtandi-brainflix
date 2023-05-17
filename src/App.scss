@@ -1,0 +1,11 @@
+@use "./components/Header/Header.scss" as *;
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/variables" as *;
+
+.App {
+  text-align: center;
+  color: blue;
+  background-color: green;
+  font-family: "Avenir Next", sans-serif;
+}

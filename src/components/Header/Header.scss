@@ -1,6 +1,70 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
 .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $white;
+  @include tablet {
+    flex-direction: row;
+  }
+  @include desktop {
+  }
+  &__avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.logo {
+  height: 25px;
+  width: 120px;
+  &__link {
+    @include padding-mobile-component;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  &__icon {
+    margin-right: 8px;
+  }
+  &__function {
+    background-color: $white;
+    background: url(../../assets/images/search.svg) no-repeat scroll 7px 7px;
+    padding-left: 30px;
+  }
+}
+
+.upload {
+  &__function {
+    background-color: $BrainFlix-Blue;
+    color: $white;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border: none;
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
+    }
+    @include tablet {
+      width: 150px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    &__icon {
+      align-self: flex-start;
+    }
+  }
 }

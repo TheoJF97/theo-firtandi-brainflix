@@ -1,0 +1,76 @@
+// import font from "../"
+
+// FONT FAMILIES
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 400;
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("woff2");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("woff2");
+}
+
+// MOBILE FONT AND TEXT STYLES
+@mixin mobile-page-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+@mixin mobile-section-header {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+@mixin mobile-sub-header {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+@mixin mobile-body-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+@mixin mobile-labels-buttons {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+// DESKTOP + TABLET FONT AND TEXT STYLES
+@mixin desktop-tablet-page-header {
+  font-size: 33px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+@mixin desktop-tablet-section-header {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+@mixin desktop-tablet-sub-header {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+@mixin desktop-tablet-body-copy {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+@mixin desktop-tablet-labels-buttons {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
