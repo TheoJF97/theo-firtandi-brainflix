@@ -13,49 +13,69 @@
     flex-direction: row;
   }
   @include desktop {
+    @include desktop-margin;
   }
-  &__avatar {
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    object-fit: cover;
-    
-  }
-  &__functions {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
 
-  }
-}
-
-.logo {
-  height: 25px;
-  width: 120px;
-  &__link {
+  &__logo {
+    height: 25px;
+    width: 120px;
     padding-bottom: 16px;
+    @include tablet {
+      padding: 0;
+    }
   }
-}
 
-.search {
-  &__icon {
-    margin-right: 8px;
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include tablet {
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
-  &__function {
-    background-color: $white;
+
+  &__search {
     background: url(../../assets/images/search.svg) no-repeat scroll 7px 11px;
-    padding-left: 30px;
+    padding: 0 0 0 30px;
     height: 40px;
-    width: 200px;
+    width: 66%;
     border-radius: 4px;
     margin: 0 16px 16px 0;
+    flex-grow: 1;
+    &:focus {
+      border: 5px solid $BrainFlix-Blue;
+    }
+    @include tablet {
+      width: 240px;
+      margin: 0 24px 0 0;
+      flex-grow: 0;
+    }
+    @include desktop {
+      margin: 0 32px 0 0;
+    }
   }
-}
 
-.upload {
-  &__function {
+  &__avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    @include tablet {
+      order: 1;
+      margin-left: 24px;
+    }
+    @include desktop {
+      margin-left: 32px;
+    }
+  }
+
+  &__upload {
     background-color: $BrainFlix-Blue;
     color: $white;
+    @include mobile-labels-buttons;
+    font-size: 15px;
     height: 40px;
     width: 100%;
     border-radius: 4px;
@@ -70,10 +90,8 @@
     }
     @include tablet {
       width: 150px;
-      padding-left: 32px;
-      padding-right: 32px;
     }
-    &__icon {
+    &-icon {
       align-self: flex-start;
     }
   }

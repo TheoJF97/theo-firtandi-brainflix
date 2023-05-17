@@ -4,13 +4,14 @@
 @font-face {
   font-family: "Avenir Next";
   font-weight: 400;
-  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("woff2");
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-style: normal;
 }
 
 @font-face {
   font-family: "Avenir Next";
   font-weight: 700;
-  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("woff2");
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
 }
 
 // MOBILE FONT AND TEXT STYLES
