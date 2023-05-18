@@ -1,15 +1,29 @@
 import "./App.scss";
-//import components 
-import Header from "./components/header/Header";
-import VideoPlayer from "./components/video-player/video-player";
-import VideoDetails from "./components/video-details/video-details";
-//import JSON Data 
+//import components
+import Header from "./components/Header/Header";
+import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import VideoDetails from "./components/VideoDetails/VideoDetails";
+import VideoNav from "./components/VideoNav/VideoNav";
+//import JSON Data
 import videoDetailsData from "./data/video-details.json";
-// import videos from "./data/videos.json";
+import videos from "./data/videos.json";
 import { useState } from "react";
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
+
+  //event handler function
+  const changeSelectedVideo = (id) => {
+    const newSelectedVideo = videos.find((video) => {
+      return video.id === id;
+    });
+    setSelectedVideo(newSelectedVideo);
+  };
+
+  // create function filteredVideos
+  const filteredVideos = videos.filter((video) => {
+    return video.id !== selectedVideo.id;
+  });
 
   return (
     <div className="App">
@@ -27,8 +41,11 @@ function App() {
         likes={selectedVideo.likes}
         description={selectedVideo.description}
       />
-      {/* <Comments />
-      <VideosNav />  */}
+      {/* <Comments /> */}
+      <VideoNav
+        videos={filteredVideos}
+        changeSelectedVideo={changeSelectedVideo}
+      />
     </div>
   );
 }
