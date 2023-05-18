@@ -41,11 +41,16 @@
     padding: 0 0 0 30px;
     height: 40px;
     width: 66%;
+    border: 1px solid $mercury;
+
     border-radius: 4px;
     margin: 0 16px 16px 0;
     flex-grow: 1;
     &:focus {
-      border: 5px solid $BrainFlix-Blue;
+      border: 2px solid $BrainFlix-Blue;
+    }
+    &--error {
+      border: 1px solid $error;
     }
     @include tablet {
       width: 240px;
