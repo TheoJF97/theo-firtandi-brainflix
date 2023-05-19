@@ -1,10 +1,13 @@
+//import SASS Styling
 import "./App.scss";
-//import components
+
+//import Components
 import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import VideoNav from "./components/VideoNav/VideoNav";
-//import JSON Data
+
+//import JSON Data + useState
 import videoDetailsData from "./data/video-details.json";
 import videos from "./data/videos.json";
 import { useState } from "react";

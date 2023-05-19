@@ -1,0 +1,69 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video-nav {
+  display: flex;
+  flex-direction: column;
+
+  &__subheader {
+    color: $silver;
+    @include padding-mobile-component;
+    @include mobile-sub-header;
+    padding-bottom: 0;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__video {
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+  &__link-box {
+    display: flex;
+    flex-wrap: wrap;
+    @include padding-mobile-component;
+    padding-bottom: 0;
+  }
+  &__title {
+    @include mobile-labels-buttons;
+    margin: 0;
+    color: $BrainFlix-Black;
+
+    //To figure out: When should a title get elipses(...)?
+    // Get Elipses:
+    //   Les Houches The Hidden Gem of The = 33 chars
+    //   Travel Health Useful Medical Information = 40 chars
+    //   Take A Romantic Break in A Boutique = 35 chars
+    // No Elipses:
+    //   Cheap Airline Tickets Great Ways to Save = 40 chars
+  }
+
+  &__channel {
+    @include mobile-body-copy;
+    font-size: 10px;
+    margin: 0;
+    color: $BrainFlix-Black;
+  }
+
+  &__image {
+    width: 36%;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    //
+    background-color: $mercury;
+  }
+
+  &__text-box {
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+  }
+}

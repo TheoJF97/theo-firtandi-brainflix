@@ -1,5 +1,9 @@
+//link components' SASS Styling 
 @use "./components/Header/Header.scss" as *;
 @use "./components/VideoPlayer/VideoPlayer.scss" as *;
+@use "./components/VideoNav/VideoNav.scss" as *;
+
+//linke partials SASS Styling 
 @use "./styles/partials/fonts" as *;
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
