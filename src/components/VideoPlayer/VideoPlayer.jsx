@@ -7,16 +7,9 @@ import videoDetails from "../../data/video-details.json";
 
 export default function VideoPlayer() {
   let firstImgSrc = videoDetails[0].image;
-  // console.log(videoDetails);
-  // console.log(firstImgSrc);
   return (
     <section className="video">
       <video controls poster={firstImgSrc} className="video__current">
-        {/* <div className="video__controls">
-          <button className="video__button-play"></button>
-          <button className="video__button-pause"></button>
-          <button className="video__button-volume"></button>
-        </div> */}
       </video>
     </section>
   );
