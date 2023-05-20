@@ -4,7 +4,7 @@
 // import volumeOff from "../../assets/images/volume_off.svg";
 // import play from "../../assets/images/play.svg";
 
-export default function VideoPlayer({ image, duration }) {
+export default function VideoPlayer({ image }) {
   return (
     <section className="video">
       <div className="video__container">

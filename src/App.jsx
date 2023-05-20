@@ -13,15 +13,20 @@ import videos from "./data/videos.json";
 import { useState } from "react";
 
 function App() {
+  //delcare state variable
   const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
 
-  //event handler function
+  //Change selected video using setVariable() method
   const changeSelectedVideo = (id) => {
-    const newSelectedVideo = videos.find((video) => {
+    const newSelectedVideo = videoDetailsData.find((video) => {
       return video.id === id;
     });
     setSelectedVideo(newSelectedVideo);
   };
+
+  // selected video shows: channel, id, image, title
+  // should show: title, channel, timestamp, views, likes, description from videoDetailsData
+  console.log(selectedVideo);
 
   // create function filteredVideos
   const filteredVideos = videos.filter((video) => {
@@ -31,10 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <VideoPlayer
-        image={selectedVideo.image}
-        duration={selectedVideo.duration}
-      />
+      <VideoPlayer image={selectedVideo.image} />
       <VideoDetails
         title={selectedVideo.title}
         channel={selectedVideo.channel}

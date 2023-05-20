@@ -1,0 +1,80 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.video-details {
+  padding: 0 16px;
+
+  &__title {
+    @include mobile-page-header;
+    @include padding-mobile-headline;
+    margin: 0;
+    @include divider;
+
+    @include tablet {
+      border-bottom: none;
+    }
+  }
+
+  &__container {
+    padding: 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @include divider;
+
+    @include tablet {
+      padding: 0 0 16px 0;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    @include tablet {
+      flex-direction: row;
+      width: auto;
+    }
+  }
+
+  &__creator {
+    @include mobile-sub-header;
+    padding-bottom: 16px;
+    @include tablet {
+      padding: 0 20px 0 0;
+    }
+  }
+
+  &__date {
+    @include mobile-body-copy;
+    color: $silver;
+  }
+
+  &__views {
+    padding-bottom: 16px;
+    @include tablet {
+      padding: 0 20px 0 0;
+    }
+  }
+
+  &__views,
+  &__likes {
+    display: flex;
+    align-items: flex-start;
+
+    &-icon {
+      padding-right: 7px;
+    }
+
+    &-amount {
+      @include mobile-body-copy;
+      color: $silver;
+    }
+  }
+
+  &__description {
+    @include mobile-body-copy;
+  }
+}
