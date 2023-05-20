@@ -5,28 +5,22 @@
 .video {
   display: flex;
   justify-content: center;
-  width: 100%;
+  margin: 0;
   background-color: $BrainFlix-DarkBlack;
-  // background-image: url(../../assets/images/play.svg) no-repeat scroll 7px 11px;
+  width: 100%;
+
+  &__container {
+    @include desktop-margin;
+  }
+
   &__current {
+    display: flex;
+    justify-content: center;
     width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    @include tablet {
+      width: 90%;
+    }
   }
-  @include tablet {
-    @include desktop-margin;
-    width: 800px;
-  }
-  @include desktop {
-    @include desktop-margin;
-    width: 900px;
-    background-color: $BrainFlix-DarkBlack;
-  }
-  // &__controls{}
-  // &__button {
-  //   &-play {
-  //   }
-  //   &-pause {
-  //   }
-  //   &-volume {
-  //   }
-  // }
 }

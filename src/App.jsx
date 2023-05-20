@@ -32,9 +32,8 @@ function App() {
     <div className="App">
       <Header />
       <VideoPlayer
-      // To add when in video-player branch
-      // image = {selectedVideo.image}
-      // duration = {selectedVideo.duration}
+        image={selectedVideo.image}
+        duration={selectedVideo.duration}
       />
       <VideoDetails
         title={selectedVideo.title}

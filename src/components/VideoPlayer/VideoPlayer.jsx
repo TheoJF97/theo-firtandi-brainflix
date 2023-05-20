@@ -3,14 +3,13 @@
 // import volumeUp from "../../assets/images/volume_up.svg";
 // import volumeOff from "../../assets/images/volume_off.svg";
 // import play from "../../assets/images/play.svg";
-import videoDetails from "../../data/video-details.json";
 
-export default function VideoPlayer() {
-  let firstImgSrc = videoDetails[0].image;
+export default function VideoPlayer({ image, duration }) {
   return (
     <section className="video">
-      <video controls poster={firstImgSrc} className="video__current">
-      </video>
+      <div className="video__container">
+        <video controls poster={image} className="video__current"></video>
+      </div>
     </section>
   );
 }
