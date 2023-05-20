@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import VideoNav from "./components/VideoNav/VideoNav";
+import Comments from "./components/Comments/Comments";
 
 //import JSON Data + useState
 import videoDetailsData from "./data/video-details.json";
@@ -24,10 +25,6 @@ function App() {
     setSelectedVideo(newSelectedVideo);
   };
 
-  // selected video shows: channel, id, image, title
-  // should show: title, channel, timestamp, views, likes, description from videoDetailsData
-  console.log(selectedVideo);
-
   // create function filteredVideos
   const filteredVideos = videos.filter((video) => {
     return video.id !== selectedVideo.id;
@@ -45,7 +42,7 @@ function App() {
         likes={selectedVideo.likes}
         description={selectedVideo.description}
       />
-      {/* <Comments /> */}
+      <Comments comments={selectedVideo.comments} />
       <VideoNav
         videos={filteredVideos}
         changeSelectedVideo={changeSelectedVideo}
