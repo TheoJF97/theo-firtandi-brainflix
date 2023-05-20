@@ -21,10 +21,6 @@ export default function Comments({ comments }) {
   return (
     <section className="comments">
       <span className="comments__amount">{comments.length + " Comments"}</span>
-      <p className="comments__name">{comments[0].name}</p>
-      <p className="comments__comment">{comments[0].comment}</p>
-
-      <p className="comments__timestamp">{comments[0].timestamp}</p>
 
       <img
         src={Mohan}
@@ -44,6 +40,23 @@ export default function Comments({ comments }) {
         <img src={commentIcon} alt="" className="comments__comment-icon" />
         COMMENT
       </button>
+
+      {/* Create a function that ouputs comments */}
+      <img src="" alt="user-avatar" className="comments__avatar" />
+      <p className="comments__name">{comments[0].name}</p>
+      <p className="comments__timestamp">{comments[0].timestamp}</p>
+      <p className="comments__comment">{comments[0].comment}</p>
+
+      {comments.map((comment) => {
+        return (
+          <>
+            <img src="" alt="user-avatar" className="comments__avatar" />
+            <p className="comments__name">{comment.name}</p>
+            <p className="comments__timestamp">{comment.timestamp}</p>
+            <p className="comments__comment">{comment.comment}</p>
+          </>
+        );
+      })}
     </section>
   );
 }
