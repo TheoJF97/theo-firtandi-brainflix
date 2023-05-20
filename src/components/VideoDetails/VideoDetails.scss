@@ -5,6 +5,14 @@
 .video-details {
   padding: 0 16px;
 
+  @include tablet {
+    @include padding-desktop-tablet-component;
+  }
+
+  @include desktop {
+    @include desktop-margin;
+  }
+
   &__title {
     @include mobile-page-header;
     @include padding-mobile-headline;
@@ -13,6 +21,8 @@
 
     @include tablet {
       border-bottom: none;
+      @include padding-desktop-tablet-headline;
+      padding-bottom: 16px;
     }
   }
 
@@ -25,7 +35,7 @@
     @include divider;
 
     @include tablet {
-      padding: 0 0 16px 0;
+      padding: 0 0 10px 0;
     }
   }
 
@@ -76,5 +86,9 @@
 
   &__description {
     @include mobile-body-copy;
+
+    @include tablet {
+      margin: 24px 0 24px 0;
+    }
   }
 }

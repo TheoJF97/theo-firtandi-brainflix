@@ -9,9 +9,7 @@ export default function VideoDetails({
   likes,
   description,
 }) {
-  const date = new Date(timestamp);
-
- 
+  const date = new Date(timestamp); 
 
   return (
     <section className="video-details">

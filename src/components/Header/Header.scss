@@ -11,6 +11,7 @@
   @include padding-mobile-component;
   @include tablet {
     flex-direction: row;
+    padding: 16px 24px 16px 24px;
   }
   @include desktop {
     @include desktop-margin;
@@ -79,7 +80,7 @@
     background-color: $BrainFlix-Blue;
     color: $white;
     @include mobile-labels-buttons;
-    font-size: 15px;
+    font-size: 13px;
     height: 40px;
     width: 100%;
     border-radius: 4px;

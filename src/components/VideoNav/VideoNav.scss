@@ -21,6 +21,10 @@
     @include mobile-sub-header;
     margin: 16px 16px 0 16px;
     padding: 16px 16px 0 0;
+    @include tablet {
+      margin: 24px 0 0 24px;
+      padding: 0;
+    }
   }
 
   &__list {
@@ -28,18 +32,20 @@
     padding: 0;
   }
 
-  // &__video {
-  // }
-
   &__link {
     text-decoration: none;
   }
+
   &__link-box {
     display: flex;
     flex-wrap: wrap;
     @include padding-mobile-component;
-    padding-bottom: 0;
+    padding-bottom: 0; // padding: 16px 16px 0 16px;
+    @include tablet {
+      padding: 16px 0 0 24px;
+    }
   }
+
   &__title {
     @include mobile-labels-buttons;
     font-size: 12px;
@@ -48,13 +54,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    //To figure out: When should a title get elipses(...)?
-    // Get Elipses:
-    //   Les Houches The Hidden Gem of The = 33 chars
-    //   Travel Health Useful Medical Information = 40 chars
-    //   Take A Romantic Break in A Boutique = 35 chars
-    // No Elipses:
-    //   Cheap Airline Tickets Great Ways to Save = 40 chars
+
     @include tablet {
       overflow: visible;
       white-space: normal;
@@ -74,7 +74,6 @@
     height: 60px;
     object-fit: cover;
     border-radius: 4px;
-    //
     background-color: $mercury;
   }
 
@@ -83,6 +82,6 @@
     display: flex;
     flex-direction: column;
     margin-left: 16px;
-    //attempt to put ellipsis
+    justify-content: space-between;
   }
 }

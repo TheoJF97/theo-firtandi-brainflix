@@ -26,7 +26,8 @@
 //PADDING -- DESKTOP/TABLET
 @mixin padding-desktop-tablet-headline {
   padding-top: 36px; //padding before headlines
-  padding-bottom: 24px; //padding after headlines
+  padding-bottom: 24px; //padding after headlines+
+  
 }
 
 @mixin padding-desktop-tablet-component {
