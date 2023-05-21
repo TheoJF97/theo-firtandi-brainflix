@@ -19,7 +19,7 @@
   &__subheader {
     color: $silver;
     @include mobile-sub-header;
-    margin: 16px 16px 0 16px;
+    margin: 0 16px 0 16px;
     padding: 16px 16px 0 0;
     @include tablet {
       margin: 24px 0 0 24px;
@@ -30,6 +30,9 @@
   &__list {
     list-style-type: none;
     padding: 0;
+    @include tablet {
+      margin-top: 8px;
+    }
   }
 
   &__link {
@@ -40,7 +43,7 @@
     display: flex;
     flex-wrap: wrap;
     @include padding-mobile-component;
-    padding-bottom: 0; // padding: 16px 16px 0 16px;
+    padding: 0 16px 16px 16px;
     @include tablet {
       padding: 16px 0 0 24px;
     }

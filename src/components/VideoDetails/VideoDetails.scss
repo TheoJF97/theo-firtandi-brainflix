@@ -20,8 +20,9 @@
     @include divider;
 
     @include tablet {
-      border-bottom: none;
+      @include desktop-tablet-page-header;
       @include padding-desktop-tablet-headline;
+      border-bottom: none;
       padding-bottom: 16px;
     }
   }
@@ -54,12 +55,16 @@
     padding-bottom: 16px;
     @include tablet {
       padding: 0 20px 0 0;
+      @include desktop-tablet-sub-header;
     }
   }
 
   &__date {
     @include mobile-body-copy;
     color: $silver;
+    @include tablet {
+      @include desktop-tablet-body-copy;
+    }
   }
 
   &__views {
@@ -81,14 +86,18 @@
     &-amount {
       @include mobile-body-copy;
       color: $silver;
+      @include tablet {
+        @include desktop-tablet-body-copy;
+      }
     }
   }
 
   &__description {
     @include mobile-body-copy;
-
+    margin-bottom: 0;
     @include tablet {
       margin: 24px 0 24px 0;
+      @include desktop-tablet-body-copy;
     }
   }
 }
