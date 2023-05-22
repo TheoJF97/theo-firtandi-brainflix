@@ -2,15 +2,6 @@ import Mohan from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/add_comment.svg";
 
 export default function Comments({ comments }) {
-  // const date = new Date(timestamp);
-  // <span className="video-details__date">
-  //           {date.toLocaleDateString("en-US", {
-  //             month: "2-digit",
-  //             day: "2-digit",
-  //             year: "numeric",
-  //           })}
-  //         </span>
-
   return (
     <section className="comments">
       <p className="comments__amount">{comments.length + " Comments"}</p>

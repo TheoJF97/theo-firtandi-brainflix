@@ -34,19 +34,25 @@ function App() {
     <div className="App">
       <Header />
       <VideoPlayer image={selectedVideo.image} />
-      <VideoDetails
-        title={selectedVideo.title}
-        channel={selectedVideo.channel}
-        timestamp={selectedVideo.timestamp}
-        views={selectedVideo.views}
-        likes={selectedVideo.likes}
-        description={selectedVideo.description}
-      />
-      <Comments comments={selectedVideo.comments} />
-      <VideoNav
-        videos={filteredVideos}
-        changeSelectedVideo={changeSelectedVideo}
-      />
+
+      <div className="App__video-content">
+        <div className="App__video-text">
+          <VideoDetails
+            title={selectedVideo.title}
+            channel={selectedVideo.channel}
+            timestamp={selectedVideo.timestamp}
+            views={selectedVideo.views}
+            likes={selectedVideo.likes}
+            description={selectedVideo.description}
+          />
+          <Comments comments={selectedVideo.comments} />
+        </div>
+
+        <VideoNav
+          videos={filteredVideos}
+          changeSelectedVideo={changeSelectedVideo}
+        />
+      </div>
     </div>
   );
 }

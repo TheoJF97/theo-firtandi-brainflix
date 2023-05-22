@@ -13,4 +13,21 @@
 .App {
   font-family: "Avenir Next";
   background-color: $white;
+
+  &__video-content {
+    @include desktop {
+      background-color: $white;
+      display: flex;
+      @include desktop-margin;
+    }
+  }
+  
+  &__video-text {
+    @include desktop {
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+    }
+  }
 }

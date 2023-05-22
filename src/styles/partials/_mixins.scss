@@ -15,33 +15,32 @@
 
 //PADDING -- MOBILE
 @mixin padding-mobile-headline {
-  padding-top: 24px; //padding before headlines
-  padding-bottom: 16px; //padding after headlines
+  padding-top: 1.5rem; //padding before headlines
+  padding-bottom: 1rem; //padding after headlines
 }
 
 @mixin padding-mobile-component {
-  padding: 16px; //padding between components
+  padding: 1rem; //padding between components
 }
 
 //PADDING -- DESKTOP/TABLET
 @mixin padding-desktop-tablet-headline {
-  padding-top: 36px; //padding before headlines
-  padding-bottom: 24px; //padding after headlines+
-  
+  padding-top: 2.25rem; //padding before headlines
+  padding-bottom: 1.5rem; //padding after headlines  
 }
 
 @mixin padding-desktop-tablet-component {
-  padding: 0 24px; //padding between components
+  padding: 0 1.5rem; //padding between components
 }
 
-//MARGINS - DESKTOP Viewport beyond 1020px width
+//MARGINS - DESKTOP Viewport beyond 63.75rem width
 @mixin desktop-margin {
-  width: $desktop-margin; //1020px
+  width: $desktop-margin; //63.75rem
   margin-left: auto;
   margin-right: auto;
 }
 
 //Divider Line
 @mixin divider {
-  border-bottom: 1px solid $mercury;
+  border-bottom: .0625rem solid $mercury;
 }

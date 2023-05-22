@@ -3,15 +3,19 @@
 @use "../../styles/partials/variables" as *;
 
 .comments {
-  padding: 16px 16px 0 16px;
+  padding: 1rem 1rem 0 1rem;
 
   @include tablet {
-    padding: 24px 24px 0 24px;
+    padding: .5rem 2.25rem 0 2.25rem;
+  }
+
+  @include desktop {
+    padding: 1.5rem 0 0 0;
   }
 
   &__amount {
     @include mobile-sub-header;
-    margin: 0 0 16px 0;
+    margin: 0 0 1rem 0;
   }
 
   &__form {
@@ -21,7 +25,7 @@
 
     @include tablet {
       flex-direction: row;
-      padding-bottom: 24px;
+      padding-bottom: 1.5rem;
     }
   }
 
@@ -32,30 +36,36 @@
 
   &__avatar {
     background-color: $mercury;
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 50%;
     flex: none;
-    margin-right: 16px;
+    margin-right: 1rem;
 
     @include tablet {
-      width: 40px;
-      height: 40px;
-      margin-right: 24px;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1.5rem;
+    }
+
+    @include desktop {
+      margin-right: 2.25rem;
     }
 
     &--mohan {
-      width: 36px;
-      height: 36px;
+      width: 2.25rem;
+      height: 2.25rem;
       border-radius: 50%;
       object-fit: cover;
-      margin: 16px 16px 0 0;
+      margin: 1rem 1rem 0 0;
+
       @include tablet {
-        width: 40px;
-        height: 40px;
+        width: 2.5rem;
+        height: 2.5rem;
       }
+
       @include desktop {
-        margin-left: 32px;
+        margin: 1rem 2.25rem 0 0;
       }
     }
   }
@@ -64,10 +74,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+
     @include tablet {
       flex-direction: row;
       align-items: flex-end;
     }
+
     &-box {
       display: flex;
       flex-direction: column;
@@ -81,13 +93,13 @@
     color: $BrainFlix-Black;
     background-color: $alabaster;
     resize: none;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 16px;
-    border: 1px solid #e1e1e1;
+    border-radius: .25rem;
+    padding: .625rem;
+    margin-bottom: 1rem;
+    border: .0625rem solid #e1e1e1;
     box-sizing: border-box;
     width: 100%;
-    height: 105px;
+    height: 6.5625rem;
     font-family: "Avenir Next";
 
     &::placeholder {
@@ -97,20 +109,18 @@
     }
 
     &:focus {
-      border: 2px solid $BrainFlix-Blue;
+      border: .125rem solid $BrainFlix-Blue;
     }
 
     @include tablet {
-      height: 40px;
+      height: 2.5rem;
       flex-shrink: 1;
-      // margin-bottom: 18px;
-      // padding: 11px;
       padding-bottom: 0;
       margin-bottom: 0;
     }
 
     &--error {
-      border: 1px solid $error;
+      border: .0625rem solid $error;
     }
   }
 
@@ -118,11 +128,11 @@
     background-color: $BrainFlix-Blue;
     color: $white;
     @include mobile-labels-buttons;
-    font-size: 13px;
-    height: 40px;
+    font-size: .8125rem;
+    height: 2.5rem;
     width: 100%;
-    border-radius: 4px;
-    margin-bottom: 16px;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,8 +145,12 @@
     }
 
     @include tablet {
-      width: 300px;
-      margin: 0 0 0 24px;
+      width: 18.75rem;
+      margin: 0 0 0 1.5rem;
+    }
+
+    @include desktop {
+      margin: 0 1.5rem 0 1.5rem;
     }
 
     &-icon {
@@ -146,11 +160,15 @@
 
   &__container {
     @include divider;
-    margin-top: 16px;
+    margin-top: 1rem;
     display: flex;
 
     @include tablet {
-      margin-top: 24px;
+      margin-top: 1.5rem;
+    }
+
+    @include desktop {
+      padding-right: 1.5rem;
     }
   }
 
@@ -168,10 +186,11 @@
 
   &__name {
     @include mobile-sub-header;
-    margin: 0 0 0 0;
+    margin: 0;
+    
     @include tablet {
       @include desktop-tablet-sub-header;
-      font-size: 15px;
+      font-size: .9375rem;
     }
   }
 
@@ -181,19 +200,18 @@
 
     @include tablet {
       @include desktop-tablet-body-copy;
-      font-size: 15px;
+      font-size: .9375rem;
     }
   }
 
   &__comment {
-    margin-top: 8px;
+    margin-top: .5rem;
     @include mobile-body-copy;
 
     @include tablet {
       @include desktop-tablet-body-copy;
-      // font-size: 15px;
-      margin-bottom: 24px;
-      margin-top: 2px;
+      margin-bottom: 1.5rem;
+      margin-top: .125rem;
     }
   }
 }
