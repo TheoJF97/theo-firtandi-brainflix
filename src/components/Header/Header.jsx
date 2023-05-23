@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/BrainFlix-logo.svg";
 import Mohan from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/upload.svg";
@@ -5,9 +6,9 @@ import upload from "../../assets/images/upload.svg";
 export default function Header() {
   return (
     <header className="header">
-      <a href="/">
+      <Link to="/">
         <img src={logo} alt="BrainFlix-Logo" className="header__logo" />
-      </a>
+      </Link>
       <div className="header__container">
         <input
           type="text"
