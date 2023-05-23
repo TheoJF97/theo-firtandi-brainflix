@@ -54,8 +54,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-
       <Router>
         <Routes>
           {/* Route 1: The Home/Video Player Page for 
@@ -70,27 +68,6 @@ function App() {
           <Route path="/:videoId" element={<Header />} />
         </Routes>
       </Router>
-
-      <VideoPlayer image={selectedVideo.image} />
-
-      <div className="App__video-content">
-        <div className="App__video-text">
-          <VideoDetails
-            title={selectedVideo.title}
-            channel={selectedVideo.channel}
-            timestamp={selectedVideo.timestamp}
-            views={selectedVideo.views}
-            likes={selectedVideo.likes}
-            description={selectedVideo.description}
-          />
-          <Comments comments={selectedVideo.comments} />
-        </div>
-
-        <VideoNav
-          videos={filteredVideos}
-          changeSelectedVideo={changeSelectedVideo}
-        />
-      </div>
     </div>
   );
 }
