@@ -1,22 +1,32 @@
 import viewsIcon from "../../assets/images/views.svg";
 import likesIcon from "../../assets/images/likes.svg";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { getVideoEndpoint } from "../../utils/api";
 
-export default function VideoDetails({
-  title,
-  channel,
-  timestamp,
-  views,
-  likes,
-  description,
-}) {
-  const date = new Date(timestamp); 
+export default function VideoDetails({ currentVideoId }) {
+  const [video, setVideo] = useState(null);
+
+  useEffect(() => {
+    axios.get(getVideoEndpoint(currentVideoId)).then((response) => {
+      setVideo(response.data);
+    });
+  }, [currentVideoId]);
+
+  if (!video) {
+    return <h1>Loading</h1>;
+  }
+
+  const date = new Date(video.timestamp);
 
   return (
     <section className="video-details">
-      <h1 className="video-details__title">{title}</h1>
+      <h1 className="video-details__title">{video.title}</h1>
       <div className="video-details__container">
         <div className="video-details__box">
-          <span className="video-details__creator">{"By " + channel}</span>
+          <span className="video-details__creator">
+            {"By " + video.channel}
+          </span>
 
           <span className="video-details__date">
             {date.toLocaleDateString("en-US", {
@@ -34,7 +44,7 @@ export default function VideoDetails({
               alt="views-eyeball-icon"
               className="video-details__views-icon"
             />
-            <span className="video-details__views-amount">{views}</span>
+            <span className="video-details__views-amount">{video.views}</span>
           </div>
 
           <div className="video-details__likes">
@@ -43,11 +53,11 @@ export default function VideoDetails({
               alt="heart-likes-icon"
               className="video-details__likes-icon"
             />
-            <span className="video-details__likes-amount">{likes}</span>
+            <span className="video-details__likes-amount">{video.likes}</span>
           </div>
         </div>
       </div>
-      <p className="video-details__description">{description}</p>
+      <p className="video-details__description">{video.description}</p>
     </section>
   );
 }

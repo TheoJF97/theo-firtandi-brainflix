@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
 import Mohan from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/add_comment.svg";
+import axios from "axios";
+import { getVideoEndpoint } from "../../utils/api";
 
-export default function Comments({ comments }) {
+export default function Comments({ currentVideoId }) {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    axios.get(getVideoEndpoint(currentVideoId)).then((response) => {
+      setComments(response.data.comments);
+    });
+  }, [currentVideoId]);
+
   return (
     <section className="comments">
       <p className="comments__amount">{comments.length + " Comments"}</p>

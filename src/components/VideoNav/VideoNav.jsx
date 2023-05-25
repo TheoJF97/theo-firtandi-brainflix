@@ -1,9 +1,21 @@
-export default function VideoNav({ videos, changeSelectedVideo }) {
-  //create function that handles the click
-  const handleClick = (event, videoId) => {
-    event.preventDefault();
-    changeSelectedVideo(videoId);
-  };
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { getVideosEndpoint } from "../../utils/api";
+import { Link } from "react-router-dom";
+
+export default function VideoNav({ currentVideoId }) {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    axios.get(getVideosEndpoint).then((response) => {
+      //response.data = array of objects
+
+      const filteredVideos = response.data.filter((video) => {
+        return video.id !== currentVideoId;
+      });
+      setVideos(filteredVideos);
+    });
+  }, [currentVideoId]);
 
   return (
     <nav className="video-nav">
@@ -13,13 +25,7 @@ export default function VideoNav({ videos, changeSelectedVideo }) {
         {videos.map((video) => {
           return (
             <li className="video-nav__video">
-              <a
-                onClick={(event) => {
-                  handleClick(event, video.id);
-                }}
-                href="/"
-                className="video-nav__link"
-              >
+              <Link to={`/videos/${video.id}`}>
                 <div className="video-nav__link-box">
                   <img
                     src={video.image}
@@ -31,7 +37,7 @@ export default function VideoNav({ videos, changeSelectedVideo }) {
                     <span className="video-nav__channel">{video.channel}</span>
                   </div>
                 </div>
-              </a>
+              </Link>
             </li>
           );
         })}
