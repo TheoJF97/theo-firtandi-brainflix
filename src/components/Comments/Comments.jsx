@@ -47,7 +47,7 @@ export default function Comments({ currentVideoId }) {
         const date = new Date(comment.timestamp);
 
         return (
-          <div className="comments__container">
+          <div className="comments__container" key={comment.id}>
             <div className="comments__avatar"></div>
             <div className="comments__content">
               <div className="comments__header">

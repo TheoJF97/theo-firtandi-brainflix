@@ -24,7 +24,7 @@ export default function VideoNav({ currentVideoId }) {
       <ul className="video-nav__list">
         {videos.map((video) => {
           return (
-            <li className="video-nav__video">
+            <li className="video-nav__video" key={video.id}>
               <Link to={`/videos/${video.id}`}>
                 <div className="video-nav__link-box">
                   <img
