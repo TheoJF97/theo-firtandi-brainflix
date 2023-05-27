@@ -3,15 +3,18 @@
 @use "../../styles/partials/variables" as *;
 
 .upload {
-  border-top: 1px solid $mercury;
-  padding: 0 16px 0 16px;
+  border-top: 0.0625rem solid $mercury;
 
-  @include tablet {
-    padding: 0 24px 0 24px;
-  }
+  &__container {
+    padding: 0 16px 0 16px;
 
-  @include desktop {
-    @include desktop-margin;
+    @include tablet {
+      padding: 0 24px 0 24px;
+    }
+
+    @include desktop {
+      @include desktop-margin;
+    }
   }
 
   &__header {
@@ -95,10 +98,10 @@
   &__title {
     @include mobile-body-copy;
     color: $silver;
+    margin-top: 16px;
 
     @include tablet {
       @include desktop-tablet-body-copy;
-      margin-top: 16px;
     }
 
     &-input {
@@ -239,7 +242,7 @@
     border: none;
 
     &:hover {
-      background-color: $BrainFlix-DarkBlue;
+      color: $BrainFlix-DarkBlue;
     }
 
     @include tablet {
