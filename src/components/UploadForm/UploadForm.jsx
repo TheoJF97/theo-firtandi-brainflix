@@ -1,4 +1,4 @@
-//import icons 
+//import icons
 import thumbnail from "../../assets/images/Upload-video-preview.jpg";
 import publish from "../../assets/images/publish.svg";
 
@@ -6,7 +6,6 @@ import publish from "../../assets/images/publish.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function UploadForm() {
-
   const navigate = useNavigate();
   const uploadAlert = (event) => {
     event.preventDefault();
