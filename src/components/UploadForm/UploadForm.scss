@@ -9,7 +9,7 @@
     padding: 0 16px 0 16px;
 
     @include tablet {
-      padding: 0 24px 0 24px;
+      padding: 0 36px 0 36px;
     }
 
     @include desktop {
@@ -143,9 +143,6 @@
 
     @include tablet {
       @include desktop-tablet-body-copy;
-    }
-
-    @include desktop {
     }
 
     &-input {
