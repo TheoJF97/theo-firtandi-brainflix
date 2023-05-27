@@ -111,11 +111,16 @@
     }
 
     @include tablet {
-      width: 9.375rem;
+      width: 100%;
     }
 
     &-link {
       width: 100%;
+      text-decoration: none;
+
+      @include tablet {
+        width: 25%;
+      }
     }
 
     &-icon {

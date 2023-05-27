@@ -8,8 +8,6 @@ export default function VideoNav({ currentVideoId }) {
 
   useEffect(() => {
     axios.get(getVideosEndpoint).then((response) => {
-      //response.data = array of objects
-
       const filteredVideos = response.data.filter((video) => {
         return video.id !== currentVideoId;
       });
@@ -25,7 +23,7 @@ export default function VideoNav({ currentVideoId }) {
         {videos.map((video) => {
           return (
             <li className="video-nav__video" key={video.id}>
-              <Link to={`/videos/${video.id}`}>
+              <Link to={`/videos/${video.id}`} className="video-nav__link">
                 <div className="video-nav__link-box">
                   <img
                     src={video.image}
