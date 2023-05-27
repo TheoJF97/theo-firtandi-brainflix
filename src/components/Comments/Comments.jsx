@@ -1,17 +1,26 @@
-import { useEffect, useState } from "react";
+//import assets
 import Mohan from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/add_comment.svg";
+
+//import react hooks, axios, and API Connection
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { getVideoEndpoint } from "../../utils/api";
 
 export default function Comments({ currentVideoId }) {
   const [comments, setComments] = useState([]);
 
+  //get current video's comments
   useEffect(() => {
     axios.get(getVideoEndpoint(currentVideoId)).then((response) => {
       setComments(response.data.comments);
     });
   }, [currentVideoId]);
+
+  //If axios retrieval lags, show user it's loading
+  if (!comments) {
+    return <h1>Loading</h1>;
+  }
 
   return (
     <section className="comments">
@@ -37,7 +46,11 @@ export default function Comments({ currentVideoId }) {
           </div>
 
           <button className="comments__button">
-            <img src={commentIcon} alt="" className="comments__comment-icon" />
+            <img
+              src={commentIcon}
+              alt="plus-symbol-inside-message-box"
+              className="comments__comment-icon"
+            />
             COMMENT
           </button>
         </div>

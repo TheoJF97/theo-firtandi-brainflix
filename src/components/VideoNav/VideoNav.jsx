@@ -1,11 +1,13 @@
-import axios from "axios";
+//import react + router hooks, axios, API Connection
 import { useEffect, useState } from "react";
-import { getVideosEndpoint } from "../../utils/api";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { getVideosEndpoint } from "../../utils/api";
 
 export default function VideoNav({ currentVideoId }) {
   const [videos, setVideos] = useState([]);
 
+  //Filter list of videos to exclude current video displayed
   useEffect(() => {
     axios.get(getVideosEndpoint).then((response) => {
       const filteredVideos = response.data.filter((video) => {
@@ -14,6 +16,11 @@ export default function VideoNav({ currentVideoId }) {
       setVideos(filteredVideos);
     });
   }, [currentVideoId]);
+
+  //If axios retrieval lags, show user it's loading
+  if (!videos) {
+    return <h1>Loading</h1>;
+  }
 
   return (
     <nav className="video-nav">

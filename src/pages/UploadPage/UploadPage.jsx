@@ -1,3 +1,4 @@
+//import components
 import Header from "../../components/Header/Header";
 import UploadForm from "../../components/UploadForm/UploadForm";
 

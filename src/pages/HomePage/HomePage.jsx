@@ -1,7 +1,7 @@
-//import useEffect, useParams, and axios
+//import react + router hooks, and axios
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 //import Components
 import Comments from "../../components/Comments/Comments";
@@ -10,16 +10,14 @@ import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import VideoNav from "../../components/VideoNav/VideoNav";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
-// API Connection and Axios Global variables
+// API Connection variables
 import { getVideosEndpoint } from "../../utils/api";
 
 export default function HomePage() {
   const { videoId } = useParams();
   const [firstVideoId, setFirstVideoId] = useState(null);
 
-  //get first plant when videoId is missing
-  // axios.get equivalent to 1 ID of video-details.json
-  //What's this useEffect saying? Retrieve the videos data and set the first video id to state variable if the videoId is null
+  //Retrieve the videos data and set the state variable to default first video id if the videoId is null
   useEffect(() => {
     if (!videoId) {
       axios.get(getVideosEndpoint).then((response) => {
@@ -28,9 +26,10 @@ export default function HomePage() {
     }
   }, [videoId]);
 
-  //If there is a videoId, make that the current Id, ELSE set it to our state variable
+  //IF there is a videoId, make that the current Id, ELSE set it to our state variable
   const currentVideoId = videoId || firstVideoId;
 
+  //If axios retrieval lags, show user it's loading
   if (!currentVideoId) {
     return <h1>LOADING</h1>;
   }

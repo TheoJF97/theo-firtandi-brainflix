@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+//import icons, and react router hooks
 import logo from "../../assets/images/BrainFlix-logo.svg";
 import Mohan from "../../assets/images/Mohan-muruge.jpg";
 import upload from "../../assets/images/upload.svg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
