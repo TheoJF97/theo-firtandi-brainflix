@@ -20,7 +20,7 @@ export default function Header() {
 
         <img src={Mohan} alt="avatar-mohan-muruge" className="header__avatar" />
 
-        <Link to="/upload">
+        <Link to="/upload" className="header__upload-link">
           <button className="header__upload">
             <img
               src={upload}

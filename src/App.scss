@@ -4,11 +4,16 @@
 @use "./components/VideoNav/VideoNav.scss" as *;
 @use "./components/VideoDetails/VideoDetails.scss" as *;
 @use "./components/Comments/Comments.scss" as *;
+@use "./components/UploadForm/UploadForm.scss" as *;
 
 //link partials SASS Styling
 @use "./styles/partials/fonts" as *;
 @use "./styles/partials/mixins" as *;
 @use "./styles/partials/variables" as *;
+
+body {
+  margin: 0;
+}
 
 .App {
   font-family: "Avenir Next";
@@ -21,7 +26,7 @@
       @include desktop-margin;
     }
   }
-  
+
   &__video-text {
     @include desktop {
       background-color: $white;

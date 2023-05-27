@@ -23,7 +23,6 @@ export default function HomePage() {
   useEffect(() => {
     if (!videoId) {
       axios.get(getVideosEndpoint).then((response) => {
-        console.log(response.data);
         setFirstVideoId(response.data[0].id);
       });
     }

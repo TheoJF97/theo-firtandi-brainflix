@@ -23,7 +23,8 @@
     height: 1.5625rem;
     width: 7.5rem;
     padding-bottom: 1rem;
-    
+    text-decoration: none;
+
     @include tablet {
       padding: 0;
     }
@@ -42,22 +43,23 @@
   }
 
   &__search {
-    background: url(../../assets/images/search.svg) no-repeat scroll .4375rem .6875rem;
+    background: url(../../assets/images/search.svg) no-repeat scroll 0.4375rem
+      0.6875rem;
     padding: 0 0 0 1.875rem;
     height: 2.5rem;
     width: 66%;
-    border: .0625rem solid $mercury;
-    border-radius: .25rem;
+    border: 0.0625rem solid $mercury;
+    border-radius: 0.25rem;
     margin: 0 1rem 1rem 0;
     flex-grow: 1;
     background-color: $alabaster;
 
     &:focus {
-      border: .125rem solid $BrainFlix-Blue;
+      border: 0.125rem solid $BrainFlix-Blue;
     }
 
     &--error {
-      border: .0625rem solid $error;
+      border: 0.0625rem solid $error;
     }
 
     @include tablet {
@@ -93,10 +95,10 @@
     background-color: $BrainFlix-Blue;
     color: $white;
     @include mobile-labels-buttons;
-    font-size: .8125rem;
+    font-size: 0.8125rem;
     height: 2.5rem;
     width: 100%;
-    border-radius: .25rem;
+    border-radius: 0.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +112,10 @@
 
     @include tablet {
       width: 9.375rem;
+    }
+
+    &-link {
+      width: 100%;
     }
 
     &-icon {

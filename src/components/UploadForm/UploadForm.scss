@@ -1,0 +1,39 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.upload {
+  
+
+  &__thumbnail {
+    width: 50%;
+  }
+
+  &__publish {
+    background-color: $BrainFlix-Blue;
+    color: $white;
+    @include mobile-labels-buttons;
+    font-size: 0.8125rem;
+    height: 2.5rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border: none;
+
+    &:hover {
+      background-color: $BrainFlix-DarkBlue;
+    }
+
+    @include tablet {
+      width: 9.375rem;
+    }
+
+    &-icon {
+      align-self: flex-start;
+    }
+  }
+}
