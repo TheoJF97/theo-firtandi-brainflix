@@ -1,21 +1,10 @@
-//import react + router hooks, axios, API Connection
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { getVideosEndpoint } from "../../utils/api";
 
-export default function VideoNav({ currentVideoId }) {
-  const [videos, setVideos] = useState([]);
-
-  //Filter list of videos to exclude current video displayed
-  useEffect(() => {
-    axios.get(getVideosEndpoint).then((response) => {
-      const filteredVideos = response.data.filter((video) => {
-        return video.id !== currentVideoId;
-      });
-      setVideos(filteredVideos);
-    });
-  }, [currentVideoId]);
+export default function VideoNav({ videos, currentVideo }) {
+  
+  const filteredVideos = videos.filter((video) => {
+    return video.id !== currentVideo.id;
+  });
 
   //If axios retrieval lags, show user it's loading
   if (!videos) {
@@ -27,7 +16,7 @@ export default function VideoNav({ currentVideoId }) {
       <h4 className="video-nav__subheader">NEXT VIDEOS</h4>
 
       <ul className="video-nav__list">
-        {videos.map((video) => {
+        {filteredVideos.map((video) => {
           return (
             <li className="video-nav__video" key={video.id}>
               <Link to={`/videos/${video.id}`} className="video-nav__link">

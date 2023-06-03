@@ -10,40 +10,72 @@ import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import VideoNav from "../../components/VideoNav/VideoNav";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
-// API Connection variables
-import { getVideosEndpoint } from "../../utils/api";
-
 export default function HomePage() {
+  //IMPORT serverURL
+  const { REACT_APP_SERVER_URL: serverUrl } = process.env;
+
+  //useParams
   const { videoId } = useParams();
-  const [firstVideoId, setFirstVideoId] = useState(null);
 
-  //Retrieve the videos data and set the state variable to default first video id if the videoId is null
+  //State variable
+  const [videos, setVideos] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState(null);
+
   useEffect(() => {
-    if (!videoId) {
-      axios.get(getVideosEndpoint).then((response) => {
-        setFirstVideoId(response.data[0].id);
-      });
-    }
-  }, [videoId]);
+    getVideos();
+  }, []);
 
-  //IF there is a videoId, make that the current Id, ELSE set it to our state variable
+  const getVideos = () => {
+    axios
+      .get(`${serverUrl}/videos`)
+      .then((response) => {
+        setVideos(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  //IF there is a videoid, make that the current,
+  //  ELSE set it to our state variable firstVideoId
+  const firstVideoId = videos[0]?.id;
   const currentVideoId = videoId || firstVideoId;
 
+  useEffect(() => {
+    if (!currentVideoId) {
+      return;
+    }
+    axios
+      .get(`${serverUrl}/videos/${currentVideoId}`)
+      .then((response) => {
+        console.log(response.data);
+        setCurrentVideo(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [currentVideoId]);
+
+  console.log(currentVideo);
+
   //If axios retrieval lags, show user it's loading
-  if (!currentVideoId) {
+  if (!currentVideo) {
+    return <h1>holup</h1>;
+  }
+  if (!videos) {
     return <h1>LOADING</h1>;
   }
 
   return (
     <>
       <Header />
-      <VideoPlayer currentVideoId={currentVideoId} />
+      <VideoPlayer currentVideo={currentVideo} />
       <div className="App__video-content">
         <div className="App__video-text">
-          <VideoDetails currentVideoId={currentVideoId} />
-          <Comments currentVideoId={currentVideoId} />
+          <VideoDetails currentVideo={currentVideo} />
+          <Comments currentVideo={currentVideo} />
         </div>
-        <VideoNav currentVideoId={currentVideoId} />
+        <VideoNav videos={videos} currentVideo={currentVideo} />
       </div>
     </>
   );

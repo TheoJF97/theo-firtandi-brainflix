@@ -7,6 +7,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function UploadForm() {
   const navigate = useNavigate();
+  //within function axios request that takes the form information event.target.value 
+  // post request it to our server
+  //take reponse and update the nav state  
   const uploadAlert = (event) => {
     event.preventDefault();
     alert("Uploaded");
