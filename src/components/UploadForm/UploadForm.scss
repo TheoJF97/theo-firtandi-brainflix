@@ -69,12 +69,14 @@
   &__form {
     margin: 16px 0 16px 0;
 
-    @include desktop {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      @include divider;
-      padding-bottom: 24px;
+    &-container {
+      @include desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @include divider;
+        padding-bottom: 24px;
+      }
     }
 
     &-inputs {

@@ -44,41 +44,42 @@ export default function UploadForm() {
         <h1 className="upload__header">Upload Video</h1>
 
         <form className="upload__form" onSubmit={handleOnSubmit}>
-          <div className="upload__thumbnail-container">
-            <h4 className="upload__thumbnail-header">VIDEO THUMBNAIL</h4>
-            <img
-              src={thumbnail}
-              alt="blue-bike-in-motion"
-              className="upload__thumbnail"
-            />
-          </div>
-
-          <div className="upload__form-inputs">
-            <label className="upload__title">
-              TITLE YOUR VIDEO
-              <input
-                type="text"
-                className="upload__title-input"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Add a title to your video"
+          <div className="upload__form-container">
+            <div className="upload__thumbnail-container">
+              <h4 className="upload__thumbnail-header">VIDEO THUMBNAIL</h4>
+              <img
+                src={thumbnail}
+                alt="blue-bike-in-motion"
+                className="upload__thumbnail"
               />
-            </label>
+            </div>
 
-            <label className="upload__description">
-              ADD A VIDEO DESCRIPTION
-              <textarea
-                id="videoTitle"
-                className="upload__description-input"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder="Add a description to your video"
-              ></textarea>
-            </label>
+            <div className="upload__form-inputs">
+              <label className="upload__title">
+                TITLE YOUR VIDEO
+                <input
+                  type="text"
+                  className="upload__title-input"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Add a title to your video"
+                />
+              </label>
+
+              <label className="upload__description">
+                ADD A VIDEO DESCRIPTION
+                <textarea
+                  id="videoTitle"
+                  className="upload__description-input"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Add a description to your video"
+                ></textarea>
+              </label>
+            </div>
           </div>
 
           <div className="upload__buttons">
-            {/* <Link to="/" className="upload__publish-link"> */}
             <button className="upload__publish">
               <img
                 src={publish}
@@ -87,7 +88,6 @@ export default function UploadForm() {
               />
               PUBLISH
             </button>
-            {/* </Link> */}
 
             <button className="upload__cancel">
               {/* Add publish icon for button's centering in mobile viewport */}
