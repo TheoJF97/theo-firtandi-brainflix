@@ -11,7 +11,7 @@ import VideoNav from "../../components/VideoNav/VideoNav";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
 export default function HomePage() {
-  //IMPORT serverURL
+  //Import serverURL: http://localhost:8080
   const { REACT_APP_SERVER_URL: serverUrl } = process.env;
 
   //useParams
@@ -48,15 +48,15 @@ export default function HomePage() {
     axios
       .get(`${serverUrl}/videos/${currentVideoId}`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setCurrentVideo(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [currentVideoId]);
+  }, [currentVideoId, serverUrl]);
 
-  console.log(currentVideo);
+  // console.log(currentVideo);
 
   //If axios retrieval lags, show user it's loading
   if (!currentVideo) {
