@@ -2,14 +2,13 @@
 import Mohan from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/add_comment.svg";
 
-export default function Comments({ currentVideo }) {  
-  
+export default function Comments({ currentVideo }) {
   const videoComments = currentVideo?.comments;
   //If axios retrieval lags, show user it's loading
   if (!currentVideo) {
     return <h1>Loading</h1>;
   }
-  
+
   return (
     <section className="comments">
       <p className="comments__amount">{videoComments.length + " Comments"}</p>
