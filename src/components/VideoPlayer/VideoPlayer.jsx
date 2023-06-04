@@ -1,10 +1,7 @@
-//import react hooks, axios, and API Connection
-// import { useEffect, useState } from "react";
-
 export default function VideoPlayer({ currentVideo }) {
   //If axios retrieval from App() lags, show user it's loading
   if (!currentVideo) {
-    return <h1>Loading</h1>;
+    return <h1>LOADING</h1>;
   }
 
   return (

@@ -5,7 +5,7 @@ import likesIcon from "../../assets/images/likes.svg";
 export default function VideoDetails({ currentVideo }) {
   //If axios retrieval lags, show user it's loading
   if (!currentVideo) {
-    return <h1>Loading</h1>;
+    return <h1>LOADING</h1>;
   }
 
   const date = new Date(currentVideo.timestamp);

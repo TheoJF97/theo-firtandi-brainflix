@@ -11,12 +11,13 @@ export default function UploadForm() {
   //Import serverURL: http://localhost:8080
   const { REACT_APP_SERVER_URL: serverUrl } = process.env;
 
-  //Invoke react-router hook for Re-Navigation
+  //Declare react-router hook for Re-Navigation
   const navigate = useNavigate();
 
-  //state variables
+  //Declare State variables
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [error, setError] = useState(false);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -27,16 +28,18 @@ export default function UploadForm() {
         title: title,
         description: description,
       })
-      .then((response) => {
-        console.log(response);
-      })
       .catch((error) => {
+        setError(true);
         console.log(error);
       });
 
     alert("Uploaded");
     navigate("/");
   };
+
+  if (error) {
+    return "Error posting video. Check console for specific error message";
+  }
 
   return (
     <section className="upload">

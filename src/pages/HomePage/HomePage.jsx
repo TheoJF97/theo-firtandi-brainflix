@@ -48,7 +48,6 @@ export default function HomePage() {
     axios
       .get(`${serverUrl}/videos/${currentVideoId}`)
       .then((response) => {
-        // console.log(response.data);
         setCurrentVideo(response.data);
       })
       .catch((error) => {
@@ -56,11 +55,8 @@ export default function HomePage() {
       });
   }, [currentVideoId, serverUrl]);
 
-  // console.log(currentVideo);
-
-  //If axios retrieval lags, show user it's loading
   if (!currentVideo) {
-    return <h1>holup</h1>;
+    return <h1>LOADING</h1>;
   }
   if (!videos) {
     return <h1>LOADING</h1>;

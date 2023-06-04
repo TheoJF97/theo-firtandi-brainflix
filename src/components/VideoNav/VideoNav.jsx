@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 
 export default function VideoNav({ videos, currentVideo }) {
-  
   const filteredVideos = videos.filter((video) => {
     return video.id !== currentVideo.id;
   });
 
   //If axios retrieval lags, show user it's loading
   if (!videos) {
-    return <h1>Loading</h1>;
+    return <h1>LOADING</h1>;
   }
 
   return (
